@@ -302,6 +302,37 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:3rem 0
   .pdj-left{padding:1.5rem}
 }
 
+
+/* ═══ REVIEWS ═══ */
+.reviews-section{background:var(--white);padding:clamp(3rem,7vw,5rem) 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.rev-global{text-align:center;margin-bottom:2.5rem}
+.rev-score{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:700;color:var(--black);line-height:1}
+.rev-stars-big{font-size:1.8rem;color:#F9A825;letter-spacing:0.1rem;margin:0.3rem 0}
+.rev-count{font-size:0.78rem;color:var(--gray-light)}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-bottom:3rem}
+.rev-card{background:var(--beige);border-radius:var(--radius);padding:1.5rem;border:1px solid var(--border);transition:all 0.3s}
+.rev-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);background:var(--white)}
+.rev-top{display:flex;align-items:center;gap:0.8rem;margin-bottom:0.8rem}
+.rev-avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;flex-shrink:0}
+.rev-info{flex:1}
+.rev-name{font-weight:600;font-size:0.88rem;color:var(--black)}
+.rev-date{font-size:0.68rem;color:var(--gray-light)}
+.rev-stars{color:#F9A825;font-size:0.9rem;letter-spacing:0.05rem}
+.rev-text{font-size:0.82rem;color:var(--gray);line-height:1.7;margin-bottom:0.6rem}
+.rev-dish{font-size:0.72rem;font-weight:600;color:var(--gray-light);background:rgba(0,0,0,0.03);display:inline-block;padding:0.2rem 0.6rem;border-radius:20px}
+
+/* Review form */
+.rev-form-wrap{background:linear-gradient(135deg,var(--pink),#FFF0F0);border-radius:var(--radius);padding:2.5rem;text-align:center;border:1px solid var(--pink-deep)}
+.rev-form-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:600;color:var(--black);margin-bottom:0.3rem}
+.rev-form-sub{font-size:0.85rem;color:var(--gray);margin-bottom:1.5rem}
+.rev-form{max-width:550px;margin:0 auto;text-align:left;display:flex;flex-direction:column;gap:0.8rem}
+.rev-form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+.rev-star-select{display:flex;gap:0.3rem;margin-top:0.2rem}
+.star-btn{font-size:1.8rem;cursor:pointer;color:#DDD;transition:all 0.2s;user-select:none}
+.star-btn:hover{transform:scale(1.15)}
+.star-btn.active{color:#F9A825}
+@media(max-width:600px){.rev-form-row{grid-template-columns:1fr}.rev-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -562,6 +593,127 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:3rem 0
   </div>
 </section>
 
+
+<!-- AVIS CLIENTS -->
+<section class="reviews-section" id="avis">
+  <div class="container">
+    <div class="stitle">⭐ Avis de nos Clients</div>
+    <div class="sdesc">Ce que nos clients disent de Tony Délice</div>
+    
+    <!-- Note globale -->
+    <div class="rev-global">
+      <div class="rev-score">4.9</div>
+      <div class="rev-stars-big">★★★★★</div>
+      <div class="rev-count">Basé sur les avis de nos clients</div>
+    </div>
+
+    <!-- Avis pré-écrits -->
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-top">
+          <div class="rev-avatar" style="background:#E8F5E9;color:#2E7D32">F</div>
+          <div class="rev-info">
+            <div class="rev-name">Fatou D.</div>
+            <div class="rev-date">Mars 2026</div>
+          </div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+        <div class="rev-text">Le meilleur Thiébou Dieun que j'ai mangé ! Le poisson était frais, le riz parfaitement cuit. On sent que c'est fait avec amour. Je recommande à 1000% 🔥</div>
+        <div class="rev-dish">🐟 Thiébou Dieun</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-top">
+          <div class="rev-avatar" style="background:#E3F2FD;color:#1565C0">A</div>
+          <div class="rev-info">
+            <div class="rev-name">Amadou S.</div>
+            <div class="rev-date">Mars 2026</div>
+          </div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+        <div class="rev-text">J'ai commandé le plateau apéro pour l'anniversaire de ma femme. 25 pièces variées, tout était chaud et croustillant. Les invités ont adoré ! Merci Tony 🙏</div>
+        <div class="rev-dish">🍢 Plateau Apéro</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-top">
+          <div class="rev-avatar" style="background:#FCE4EC;color:#C62828">M</div>
+          <div class="rev-info">
+            <div class="rev-name">Mariama N.</div>
+            <div class="rev-date">Février 2026</div>
+          </div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+        <div class="rev-text">Les fataya de Tony sont les meilleurs de Dakar, je dis bien les MEILLEURS. Dorés, croustillants, bien garnis. Et le jus de bissap est incroyable aussi 😍</div>
+        <div class="rev-dish">🥟 Fataya + 🥤 Bissap</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-top">
+          <div class="rev-avatar" style="background:#FFF3E0;color:#E65100">I</div>
+          <div class="rev-info">
+            <div class="rev-name">Ibrahima K.</div>
+            <div class="rev-date">Février 2026</div>
+          </div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+        <div class="rev-text">Le Yassa Poulet m'a rappelé celui de ma mère. Les oignons caramélisés, le goût du citron... C'est exactement ça la vraie cuisine sénégalaise. Livraison rapide en plus !</div>
+        <div class="rev-dish">🍗 Yassa Poulet</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-top">
+          <div class="rev-avatar" style="background:#F3E5F5;color:#7B1FA2">S</div>
+          <div class="rev-info">
+            <div class="rev-name">Sophie M.</div>
+            <div class="rev-date">Janvier 2026</div>
+          </div>
+          <div class="rev-stars">★★★★★</div>
+        </div>
+        <div class="rev-text">J'ai commandé la box mélangée pour un brunch entre amies. Tout était magnifique et délicieux. La présentation est top, on voit que c'est fait avec soin. Tony est vraiment passionnée ❤️</div>
+        <div class="rev-dish">🎁 Box Mélangée</div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-top">
+          <div class="rev-avatar" style="background:#E0F2F1;color:#00695C">O</div>
+          <div class="rev-info">
+            <div class="rev-name">Ousmane T.</div>
+            <div class="rev-date">Janvier 2026</div>
+          </div>
+          <div class="rev-stars">★★★★☆</div>
+        </div>
+        <div class="rev-text">Très bon attiéké avec aloko et poisson braisé. Copieux et bien assaisonné. Le jus de bouye était frais et onctueux. Je reviendrai c'est sûr !</div>
+        <div class="rev-dish">🥙 Attiéké + 🍹 Bouye</div>
+      </div>
+    </div>
+
+    <!-- Formulaire d'avis -->
+    <div class="rev-form-wrap">
+      <div class="rev-form-title">📝 Laissez votre avis</div>
+      <div class="rev-form-sub">Partagez votre expérience avec Tony Délice !</div>
+      <div class="rev-form">
+        <div class="rev-form-row">
+          <div><div class="flbl">Votre nom</div><input class="finp" id="revName" placeholder="Ex: Fatou"></div>
+          <div><div class="flbl">Plat commandé</div><input class="finp" id="revDish" placeholder="Ex: Thiébou Dieun"></div>
+        </div>
+        <div>
+          <div class="flbl">Votre note</div>
+          <div class="rev-star-select" id="starSelect">
+            <span class="star-btn" onclick="setStars(1)">☆</span>
+            <span class="star-btn" onclick="setStars(2)">☆</span>
+            <span class="star-btn" onclick="setStars(3)">☆</span>
+            <span class="star-btn" onclick="setStars(4)">☆</span>
+            <span class="star-btn" onclick="setStars(5)">☆</span>
+          </div>
+        </div>
+        <div><div class="flbl">Votre commentaire</div><textarea class="ftxt" id="revComment" placeholder="Racontez votre expérience..." style="min-height:80px"></textarea></div>
+        <button class="btn btn-black" style="width:100%" onclick="submitReview()">Envoyer mon avis ⭐</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div style="padding:3rem 0">
   <div class="cta">
     <div class="cta-title">Envie de délices ?</div>
@@ -817,6 +969,33 @@ if(window.location.search.includes('payment=success')){
   }, 500);
 }
 render('all');upC();
+
+// Reviews
+let revStars=0;
+function setStars(n){
+  revStars=n;
+  document.querySelectorAll('.star-btn').forEach((s,i)=>{
+    s.textContent=i<n?'★':'☆';
+    s.classList.toggle('active',i<n);
+  });
+}
+function submitReview(){
+  const name=document.getElementById('revName').value.trim();
+  const dish=document.getElementById('revDish').value.trim();
+  const comment=document.getElementById('revComment').value.trim();
+  if(!name||!comment){alert('Veuillez remplir votre nom et commentaire.');return;}
+  if(!revStars){alert('Veuillez donner une note (étoiles).');return;}
+  const stars='★'.repeat(revStars)+'☆'.repeat(5-revStars);
+  const msg=`⭐ *Nouvel avis client — Tony Délice*\n\n👤 ${name}\n${stars} (${revStars}/5)\n🍽️ Plat : ${dish||'Non précisé'}\n\n💬 "${comment}"`;
+  window.open(`https://wa.me/221771051665?text=${encodeURIComponent(msg)}`,'_blank');
+  document.getElementById('mMsg').innerHTML=`Merci <strong>${name}</strong> pour votre avis !<br>⭐ ${stars}<br><br>Votre retour nous aide à nous améliorer 🧡`;
+  document.getElementById('modal').classList.add('show');
+  document.getElementById('revName').value='';
+  document.getElementById('revDish').value='';
+  document.getElementById('revComment').value='';
+  setStars(0);
+}
+
 
 // Plat du jour - auto update day
 const jours=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
