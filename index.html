@@ -225,6 +225,60 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:3rem 0
   .payr{flex-direction:column}
   .nav-info{display:none}
 }
+
+/* ═══ TIPS ═══ */
+.tips-section{background:var(--white);padding:clamp(3rem,7vw,5rem) 0;border-bottom:1px solid var(--border)}
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem}
+.tip-card{border-radius:var(--radius);padding:1.8rem;position:relative;overflow:hidden;transition:all 0.3s}
+.tip-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.tip-yellow{background:linear-gradient(135deg,#FFF8E1,#FFECB3)}
+.tip-pink{background:linear-gradient(135deg,#FCE4EC,#F8BBD0)}
+.tip-green{background:linear-gradient(135deg,#E8F5E9,#C8E6C9)}
+.tip-orange{background:linear-gradient(135deg,#FFF3E0,#FFE0B2)}
+.tip-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;opacity:0.15;position:absolute;top:0.5rem;right:1rem}
+.tip-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:var(--black);margin-bottom:0.5rem}
+.tip-text{font-size:0.82rem;color:var(--gray);line-height:1.7;font-weight:300}
+.tip-emoji{font-size:1.5rem;margin-top:0.8rem}
+
+/* ═══ RECIPE ═══ */
+.recipe-section{background:var(--beige);padding:clamp(3rem,7vw,5rem) 0}
+.recipe-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.recipe-header{background:linear-gradient(135deg,var(--red),#D4452E);padding:2rem;color:white;text-align:center}
+.recipe-badge{display:inline-block;background:rgba(255,255,255,0.2);padding:0.3rem 1rem;border-radius:50px;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.8rem}
+.recipe-name{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;margin-bottom:0.5rem}
+.recipe-meta{display:flex;justify-content:center;gap:1.5rem;font-size:0.8rem;opacity:0.85}
+.recipe-body{display:grid;grid-template-columns:1fr 1.5fr;gap:0;min-height:300px}
+.recipe-col{padding:2rem}
+.recipe-col:first-child{background:var(--beige);border-right:1px solid var(--border)}
+.recipe-subtitle{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;margin-bottom:1rem;color:var(--black)}
+.recipe-list{list-style:none;font-size:0.82rem;color:var(--gray);line-height:2}
+.recipe-list li::before{content:'• ';color:var(--red);font-weight:700}
+.recipe-steps{font-size:0.82rem;color:var(--gray);line-height:1.8;padding-left:1.2rem}
+.recipe-steps li{margin-bottom:0.8rem}
+.recipe-steps li strong{color:var(--black)}
+.recipe-footer{padding:1.5rem 2rem;border-top:1px solid var(--border);background:var(--beige)}
+.recipe-tip{font-size:0.82rem;color:var(--gray);line-height:1.6;font-style:italic}
+.recipe-cta{margin-top:0.8rem;font-size:0.85rem;font-weight:600}
+.recipe-cta a{color:var(--red);text-decoration:none}
+.recipe-cta a:hover{text-decoration:underline}
+
+/* ═══ FUN FACTS ═══ */
+.fun-section{background:var(--black);padding:clamp(3rem,7vw,5rem) 0;color:white}
+.fun-section .stitle{color:white}
+.fun-section .sdesc{color:rgba(255,255,255,0.5)}
+.fun-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem}
+.fun-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:1.8rem;transition:all 0.3s}
+.fun-card:hover{background:rgba(255,255,255,0.1);transform:translateY(-3px)}
+.fun-icon{font-size:2.2rem;margin-bottom:0.8rem}
+.fun-title{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:600;margin-bottom:0.4rem}
+.fun-text{font-size:0.8rem;color:rgba(255,255,255,0.6);line-height:1.7;font-weight:300}
+.fun-text strong{color:white}
+
+@media(max-width:768px){
+  .recipe-body{grid-template-columns:1fr}
+  .recipe-col:first-child{border-right:none;border-bottom:1px solid var(--border)}
+}
+
 </style>
 </head>
 <body>
@@ -254,6 +308,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:3rem 0
   <div class="nav-inner">
     <div class="nav-links">
       <a href="#categories" class="nav-link" onclick="filterMenu('all')">CATÉGORIES</a>
+      <a href="#conseils" class="nav-link">💡 ASTUCES</a>
+      <a href="#recettes" class="nav-link">👩‍🍳 RECETTES</a>
       <a href="#menu" class="nav-link" onclick="filterMenu('plat')">🍽️ PLATS</a>
       <a href="#menu" class="nav-link" onclick="filterMenu('four')">🧁 PETITS FOURS</a>
       <a href="#menu" class="nav-link" onclick="filterMenu('boisson')">🥤 JUS LOCAUX</a>
@@ -343,6 +399,123 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:3rem 0
 </section>
 
 <!-- CTA -->
+
+<!-- CONSEILS CULINAIRES -->
+<section class="tips-section" id="conseils">
+  <div class="container">
+    <div class="stitle">💡 Astuces de Chef</div>
+    <div class="sdesc">Les petits secrets de Tony pour sublimer votre cuisine au quotidien</div>
+    <div class="tips-grid">
+      <div class="tip-card tip-yellow">
+        <div class="tip-num">01</div>
+        <div class="tip-title">Le secret du Thiébou Dieun parfait</div>
+        <div class="tip-text">Faites d'abord revenir votre nokoss (pâte d'assaisonnement) dans l'huile chaude jusqu'à ce qu'il change de couleur. C'est ÇA qui donne le goût fumé et profond au riz. Ne sautez jamais cette étape !</div>
+        <div class="tip-emoji">🐟🔥</div>
+      </div>
+      <div class="tip-card tip-pink">
+        <div class="tip-num">02</div>
+        <div class="tip-title">Oignons caramélisés du Yassa</div>
+        <div class="tip-text">Le secret ? La PATIENCE. Faites cuire vos oignons à feu DOUX pendant au moins 30 minutes. Ajoutez un filet de citron vert à la fin. C'est la différence entre un bon Yassa et un Yassa INOUBLIABLE.</div>
+        <div class="tip-emoji">🍋✨</div>
+      </div>
+      <div class="tip-card tip-green">
+        <div class="tip-num">03</div>
+        <div class="tip-title">Jus de Bissap comme au Sénégal</div>
+        <div class="tip-text">Faites bouillir les fleurs d'hibiscus avec de la menthe fraîche et un bâton de vanille. Laissez refroidir, filtrez, ajoutez le sucre APRÈS. Servez avec des glaçons et une feuille de menthe. Magique !</div>
+        <div class="tip-emoji">🌺❄️</div>
+      </div>
+      <div class="tip-card tip-orange">
+        <div class="tip-num">04</div>
+        <div class="tip-title">Fataya croustillants garantis</div>
+        <div class="tip-text">Deux règles d'or : la pâte doit être FINE (pas plus de 2mm) et l'huile doit être TRÈS chaude (180°C). Plongez-les et ne les touchez pas pendant 30 secondes. Résultat : dorés et croustillants à chaque fois !</div>
+        <div class="tip-emoji">🥟💛</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECETTE DU MOMENT -->
+<section class="recipe-section" id="recettes">
+  <div class="container">
+    <div class="stitle">👩‍🍳 Recette du Moment</div>
+    <div class="sdesc">Tony partage avec vous une recette à essayer chez vous !</div>
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <div class="recipe-badge">⭐ RECETTE DE LA SEMAINE</div>
+        <div class="recipe-name">Yassa Poulet de Tony</div>
+        <div class="recipe-meta">
+          <span>⏱️ 1h30</span>
+          <span>👥 4 personnes</span>
+          <span>🌶️ Facile</span>
+        </div>
+      </div>
+      <div class="recipe-body">
+        <div class="recipe-col">
+          <div class="recipe-subtitle">🛒 Ingrédients</div>
+          <ul class="recipe-list">
+            <li>1 poulet entier découpé en morceaux</li>
+            <li>8 gros oignons émincés finement</li>
+            <li>4 citrons verts (jus)</li>
+            <li>4 cuillères à soupe de moutarde</li>
+            <li>3 gousses d'ail écrasées</li>
+            <li>2 cubes de bouillon</li>
+            <li>Huile d'arachide</li>
+            <li>1 piment (selon votre goût)</li>
+            <li>Sel, poivre, laurier</li>
+            <li>Olives vertes (optionnel)</li>
+            <li>Riz blanc parfumé</li>
+          </ul>
+        </div>
+        <div class="recipe-col">
+          <div class="recipe-subtitle">👩‍🍳 Préparation</div>
+          <ol class="recipe-steps">
+            <li><strong>Marinez le poulet</strong> avec le jus de citron, la moutarde, l'ail, sel et poivre. Laissez reposer 2h minimum (toute la nuit c'est encore mieux !)</li>
+            <li><strong>Grillez le poulet</strong> dans une poêle bien chaude avec un peu d'huile jusqu'à ce qu'il soit doré des deux côtés. Réservez.</li>
+            <li><strong>Les oignons :</strong> Dans la même poêle, faites revenir les oignons à feu DOUX dans l'huile. Patience ! 30 minutes minimum jusqu'à ce qu'ils soient fondants et dorés.</li>
+            <li><strong>Remettez le poulet</strong> sur les oignons, ajoutez un verre d'eau, les cubes, le laurier et le piment. Couvrez et laissez mijoter 25 minutes.</li>
+            <li><strong>Ajoutez les olives</strong> et un dernier filet de citron. Goûtez et ajustez l'assaisonnement.</li>
+            <li><strong>Servez</strong> avec du riz blanc bien chaud. Fermez les yeux. Savourez. 🤤</li>
+          </ol>
+        </div>
+      </div>
+      <div class="recipe-footer">
+        <div class="recipe-tip">💡 <strong>Le conseil de Tony :</strong> "Le vrai secret du Yassa, c'est la marinade. Plus le poulet marine longtemps, plus le goût est profond. Et ne lésinez JAMAIS sur les oignons !"</div>
+        <div class="recipe-cta">Pas envie de cuisiner ? <a href="https://wa.me/221771051665?text=Bonjour, je voudrais commander un Yassa Poulet svp" target="_blank">Commandez le Yassa de Tony →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LE SAVIEZ-VOUS -->
+<section class="fun-section">
+  <div class="container">
+    <div class="stitle">🤓 Le Saviez-Vous ?</div>
+    <div class="sdesc">Des anecdotes fun sur la cuisine sénégalaise</div>
+    <div class="fun-grid">
+      <div class="fun-card">
+        <div class="fun-icon">🐟</div>
+        <div class="fun-title">Thiébou Dieun</div>
+        <div class="fun-text">Le Thiébou Dieun est inscrit au <strong>patrimoine immatériel de l'UNESCO</strong> depuis 2021. C'est le premier plat africain à recevoir cet honneur !</div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-icon">🌺</div>
+        <div class="fun-title">Bissap Power</div>
+        <div class="fun-text">Le bissap contient plus de <strong>vitamine C que l'orange</strong> ! C'est aussi un excellent antioxydant. Boire du bissap, c'est bon ET intelligent.</div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-icon">🥜</div>
+        <div class="fun-title">L'arachide sénégalaise</div>
+        <div class="fun-text">Le Sénégal est l'un des plus grands producteurs d'arachide au monde. L'huile d'arachide est le <strong>secret du goût</strong> de toute notre cuisine.</div>
+      </div>
+      <div class="fun-card">
+        <div class="fun-icon">🧡</div>
+        <div class="fun-title">Teranga</div>
+        <div class="fun-text">Au Sénégal, on mange tous <strong>dans le même bol</strong>. La Teranga (hospitalité), c'est partager son repas avec quiconque passe devant votre maison.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div style="padding:3rem 0">
   <div class="cta">
     <div class="cta-title">Envie de délices ?</div>
